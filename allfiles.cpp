@@ -94,6 +94,38 @@ class teacher : public BaseEntity
 };
 
 
+//create model course
+class course : public sharedata
+{
+    private:
+    double hour;
+    int studentsIDS[5];
+
+    public:
+    //SETTER FUNCTIONS
+   void set_hour(double hour)
+   {
+       this->hour=hour;
+   }
+   void set_studentsIDS(int studentsIDS[5])
+   {
+    for(int i=0;i<5;i++)
+    {
+        this->studentsIDS[i]=studentsIDS[i];
+    }
+   }
+   //GETTER FUNCTIONS
+   double get_hour()
+   {
+       return hour;
+   }
+   int * get_studentsIDS()
+   {
+       return studentsIDS;
+   }
+};
+
+
 //create model student
 /*#include "BaseEntity.c++"*/
 /*#include "teacher.cpp"*/
@@ -103,6 +135,8 @@ class student : public BaseEntity
    private:
    float GPA;
    teacher teachers[5];
+   course courses[5];
+
 
    public:
    //SETTER FUNCTIONS
@@ -117,6 +151,13 @@ class student : public BaseEntity
              this->teachers[i]=teachers[i];
         }
    }
+   void get_cources(course cources[5])
+   {
+        for(int i=0;i<5;i++)
+        {
+             this->courses[i]=cources[i];
+        }
+   }
    //GETTER FUNCTIONS
    float get_GPA()
    {
@@ -126,24 +167,10 @@ class student : public BaseEntity
    {
         return teachers;
    }
-};
-
-
-//create model course
-class course : public sharedata
-{
-    private:
-    double hour;
-
-    public:
-    //SETTER FUNCTIONS
-   void set_hour(double hour)
+    course * get_cources()
    {
-       this->hour=hour;
-   }
-   //GETTER FUNCTIONS
-   double get_hour()
-   {
-       return hour;
+        return courses;
    }
 };
+
+
