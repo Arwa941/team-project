@@ -3,15 +3,13 @@
 #include<cmath>
 using namespace std;
 
-//create model base_entity
-class BaseEntity
+
+//create model share_data
+class sharedata
 {
    private:
    int id;
    string name;
-   int age;
-   long long int phone_number;
-   
     public:
    //SETTER FUNCTIONS
    void set_ID(int id)
@@ -22,14 +20,6 @@ class BaseEntity
    {
        this->name=name;
    }
-   void set_age(int age)
-   {
-       this->age=age;
-   }
-   void set_phone_number(long long int phone_number)
-   {
-       this->phone_number=phone_number;
-   }
    //GETTER FUNCTIONS
    int get_ID()
    {
@@ -39,6 +29,26 @@ class BaseEntity
    {
        return name;
    }
+};
+
+//create model base_entity
+class BaseEntity : public sharedata
+{
+   private:
+   int age;
+   long long int phone_number;
+   
+    public:
+   //SETTER FUNCTIONS
+   void set_age(int age)
+   {
+       this->age=age;
+   }
+   void set_phone_number(long long int phone_number)
+   {
+       this->phone_number=phone_number;
+   }
+   //GETTER FUNCTIONS
    int get_age()
    {
        return age;
@@ -118,3 +128,22 @@ class student : public BaseEntity
    }
 };
 
+
+//create model course
+class course : public sharedata
+{
+    private:
+    double hour;
+
+    public:
+    //SETTER FUNCTIONS
+   void set_hour(double hour)
+   {
+       this->hour=hour;
+   }
+   //GETTER FUNCTIONS
+   double get_hour()
+   {
+       return hour;
+   }
+};
