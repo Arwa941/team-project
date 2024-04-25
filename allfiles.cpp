@@ -58,17 +58,28 @@ class teacher : public BaseEntity
 {
     private:
    float salary;
+   int studentsIDS[5];
    public:
    //SETTER FUNCTIONS
    void set_salary(float salary)
    {
        this->salary=salary;
    }
-
+   void set_studentsIDS(int studentsIDS[5])
+   {
+    for(int i=0;i<5;i++)
+    {
+        this->studentsIDS[i]=studentsIDS[i];
+    }
+   }
    //GETTER FUNCTIONS
    float get_salary()
    {
        return salary;
+   }
+   int * get_studentsIDS()
+   {
+       return studentsIDS;
    }
 };
 
