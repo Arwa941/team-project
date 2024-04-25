@@ -1,12 +1,10 @@
 #include "BaseEntity.c++"
-#include <iostream>
-#include <string>
-#include<cmath>
-using namespace std;
+#include "teacher.cpp"
 class student : public BaseEntity 
 {
    private:
    float GPA;
+   teacher arr[5];
 
    public:
    //SETTER FUNCTIONS

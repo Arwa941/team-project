@@ -1,8 +1,4 @@
 #include "BaseEntity.c++"    //inheritance
-#include <iostream>
-#include <string>
-#include<cmath>
-using namespace std;
 class teacher : public BaseEntity
 {
     private:
