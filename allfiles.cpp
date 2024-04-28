@@ -171,5 +171,3 @@ class student : public BaseEntity
         return courses;
    }
 };
-
-
