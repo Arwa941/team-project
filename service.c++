@@ -1,11 +1,14 @@
 #include "repository.c++"
 #include <bits/stdc++.h>
 using namespace std;
+////////////////////////////// STUDENT ///////////////////////////
+//interface studentService
 class studentservice
 {
     public:
     virtual int addstudent(student Student)=0;
 };
+//class studentServiceIMPL
 class studentserviceIMPL
 {
     private:
@@ -16,12 +19,14 @@ class studentserviceIMPL
         return StudentRepository.addstudent(Student);
     }
 };
-//////////////////////////
+////////////////////////////// COURSE ///////////////////////////
+//interface courseService
 class courseservice
 {
     public:
       virtual int addcourse(course Course)=0;
 };
+//class courseServiceIMPL
 class courseserviceIMPL
 {
     private:
@@ -32,12 +37,15 @@ class courseserviceIMPL
         return CourseRepository.addcourse(Course);
     }  
 };
-/////////////////////////
+
+////////////////////////////// TEACHER ///////////////////////////
+//interface teacherService
 class teacherservice
 { 
     public:
        virtual int addteacher(teacher Teacher)=0;
 };
+//class teacherServiceIMPL
 class teacherserviceIMPL
 {
     private:
